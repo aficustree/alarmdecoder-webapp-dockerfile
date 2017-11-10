@@ -21,11 +21,15 @@ WORKDIR /opt/alarmdecoder-webapp
 
 RUN pip install -r requirements.txt
 
+# updating to compatible to latest version of alarmdecoder
+RUN pip install git+https://github.com/nutechsoftware/alarmdecoder
+
 RUN mkdir instance \
  && chown -R alarmdecoder:alarmdecoder .
 
 USER alarmdecoder
-RUN python manage.py initdb
+#moving to start
+#RUN python manage.py initdb
 USER root
 
 # sqlite db is stored here

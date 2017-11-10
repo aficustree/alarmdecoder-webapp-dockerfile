@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# init db
+python manage.py initdb
+
 # Make sure the alarmdecoder user has access to the USB device. I've confirmed
 # this does not change the permission bits outside of the docker container.
 chmod o+rw /dev/ttyUSB* || echo "no USB devices found in container, continuing"
