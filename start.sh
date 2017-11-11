@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# setting perms
+mkdir instance && chown -R alarmdecoder:alarmdecoder .
+
 # init db
 python manage.py initdb
 
