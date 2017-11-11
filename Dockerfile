@@ -28,8 +28,7 @@ RUN mkdir instance \
  && chown -R alarmdecoder:alarmdecoder .
 
 USER alarmdecoder
-#moving to start
-#RUN python manage.py initdb
+RUN python manage.py initdb
 USER root
 
 # sqlite db is stored here
