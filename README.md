@@ -20,8 +20,7 @@ You can then access AlarmDecoder at `http://<host_ip>:5000`.
 This container exposes the gunicorn workers directly, it's recommended that set
 up an nginx reverse proxy in front of the app.
 
-You'll also likely want to created a named or mounted volume to persist the
-configuration and logging, which lives at `/opt/alarmdecoder-webapp/instance`.
+You'll also likely want to created a named volume (do not use a bind mount) to persist the configuration and logging, which lives at `/opt/alarmdecoder-webapp/instance`. You can create named volumes using the `volume create` command.
 
 A complete docker-compose configuration might look something like:
 
