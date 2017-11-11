@@ -24,8 +24,8 @@ RUN pip install -r requirements.txt
 # updating to compatible to latest version of alarmdecoder
 RUN pip install git+https://github.com/nutechsoftware/alarmdecoder
 
-#RUN mkdir instance \
-# && chown -R alarmdecoder:alarmdecoder .
+RUN mkdir instance \
+ && chown -R alarmdecoder:alarmdecoder .
 
 USER alarmdecoder
 #moving to start
